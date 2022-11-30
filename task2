@@ -1,6 +1,6 @@
 #include<iostream>
 void output(int arrSpirall[3][3]);
- int logic()
+ int main()
 {
 	static int arrSpirall[3][3];
 	int counter = 1, x = 0, y = 0;
