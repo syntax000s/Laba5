@@ -1,0 +1,40 @@
+#include <stdio.h>
+#define N 7
+
+int main()
+{
+    int array[N][N] = {0};
+    
+    int counter = 0, temp = 0;
+    while (counter != N * N) {
+        for (int i = 0 + temp; i < N - temp; i++) {
+        counter++;
+        array[0 + temp][i] = counter;
+        }
+        counter--;
+        for (int i = 0 + temp; i < N - temp; i++) {
+            counter++;
+            array[i][N - 1 - temp] = counter;
+        }
+        counter--;
+        for (int i = N - 1 - temp; i >= 0 + temp; i--) {
+            counter++;
+            array[N - 1 - temp][i] = counter;
+        }
+        counter--;
+        for (int i = N - 1 - temp; i >= 0 + 1 + temp; i--) {
+            counter++;
+            array[i][0 + temp] = counter;
+        }
+        //printf("cnt = %d ", counter);
+        temp++;
+    }
+        
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            printf("%2d ", array[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
